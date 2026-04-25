@@ -2,6 +2,30 @@
 <html>
   <head>
     <title>Chatbot</title>
+    <style>
+      .send-button {
+        background-color: rgb(25, 135, 84);
+        color: white;
+        padding: 12px 20px;
+        margin-left: 10px;
+        border : none;
+        border-radius : 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+        .chat-input {
+          padding: 12px 15px;
+          border-radius: 10px;
+          border-width: 1px;
+          font-size:15px;
+          flex-grow: 1;
+        }
+
+        .chat-input-container{
+          display:flex;
+        }
+      
+    </style>
   </head>
   <body>
     <div class="js-container"></div>
@@ -50,15 +74,17 @@
         
 
         return (
-          <>
+          <div className = "chat-input-container">
           <input 
             placeholder="Send a message to Chatbot" 
             size ="30"
             value = {inputText}
-            onChange ={saveInputText} />
+            onChange ={saveInputText}
+            className = "chat-input" />
           <button
-            onClick= {sendMessage} >Send</button>
-          </>
+            onClick= {sendMessage}
+            className ="send-button" >Send</button>
+          </div>
         );
       }
       function ChatMessage(props){
